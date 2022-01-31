@@ -54,7 +54,7 @@ namespace sakilaconsole.sakila
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Server=localhost;Database=sakila;Uid=root;Pwd=163088");
+                optionsBuilder.UseMySQL("Server=localhost;Database=sakila;Uid=root;Pwd=");
             }
         }
 
