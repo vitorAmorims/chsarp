@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "l7iq3vs+tYUtKnAgm0Jm046FcyzrfhAwJCEvi8pCTivpwPx1Ttqii8+3wybF2PBp0okc35vLUgYKPzEBiTqGCw==",
+  "success": true,
+  "projectFilePath": "/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex4/Ex4.csproj",
+  "expectedPackageFiles": [
+    "/home/vitor/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/vitor/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

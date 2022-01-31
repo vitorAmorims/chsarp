@@ -1,0 +1,9 @@
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/obj/Debug/netstandard2.0/Ex2WithXml.csprojAssemblyReference.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/obj/Debug/netstandard2.0/Ex2WithXml.AssemblyInfoInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/obj/Debug/netstandard2.0/Ex2WithXml.AssemblyInfo.cs
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/obj/Debug/netstandard2.0/Ex2WithXml.csproj.CoreCompileInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/bin/Debug/netstandard2.0/Ex2WithXml.deps.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/bin/Debug/netstandard2.0/Ex2WithXml.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/bin/Debug/netstandard2.0/Ex2WithXml.pdb
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/obj/Debug/netstandard2.0/Ex2WithXml.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex2WithXml/obj/Debug/netstandard2.0/Ex2WithXml.pdb

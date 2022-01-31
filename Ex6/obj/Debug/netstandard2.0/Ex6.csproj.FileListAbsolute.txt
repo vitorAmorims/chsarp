@@ -1,0 +1,9 @@
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/obj/Debug/netstandard2.0/Ex6.AssemblyInfoInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/obj/Debug/netstandard2.0/Ex6.AssemblyInfo.cs
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/obj/Debug/netstandard2.0/Ex6.csproj.CoreCompileInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/bin/Debug/netstandard2.0/Ex6.deps.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/bin/Debug/netstandard2.0/Ex6.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/bin/Debug/netstandard2.0/Ex6.pdb
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/obj/Debug/netstandard2.0/Ex6.csprojAssemblyReference.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/obj/Debug/netstandard2.0/Ex6.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/Linq-with-xunit/Ex6/obj/Debug/netstandard2.0/Ex6.pdb
