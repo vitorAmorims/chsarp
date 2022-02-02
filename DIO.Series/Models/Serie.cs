@@ -19,7 +19,7 @@ namespace DIO.Series.Models
 
         }
         public Genero Genero { get; private set; }
-        private string Titulo { get; set; }
+        public string Titulo { get; private set; }
         public string Descricao { get; private set; }
         public int Ano { get; private set; }
         private bool Excluido { get; set; }
@@ -59,11 +59,11 @@ namespace DIO.Series.Models
         {
             RuleFor(s => s.retornaTitulo())
                 .NotEmpty().WithMessage("Titulo can't be empty.")
-                .MaximumLength(50).WithMessage("Name length must be maximum 50 character.");
+                .MaximumLength(50).WithMessage("Titulo length must be maximum 50 character.");
 
             RuleFor(s => s.Descricao)
                 .NotEmpty().WithMessage("Descricao can't be empty.")
-                .MaximumLength(50).WithMessage("E-mail length must be maximum 50.");
+                .MaximumLength(50).WithMessage("Descricao length must be maximum 50.");
 
             RuleFor(s => s.Ano)
                 .GreaterThanOrEqualTo(1900).WithMessage("O ano da serie deve ser maior ou superior 1900");
