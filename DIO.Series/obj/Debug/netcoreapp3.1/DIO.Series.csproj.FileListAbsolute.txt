@@ -1,0 +1,17 @@
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/DIO.Series
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/DIO.Series.deps.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/DIO.Series.runtimeconfig.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/DIO.Series.runtimeconfig.dev.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/DIO.Series.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/DIO.Series.pdb
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.csprojAssemblyReference.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.AssemblyInfoInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.AssemblyInfo.cs
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.csproj.CoreCompileInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.pdb
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.genruntimeconfig.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/FluentValidation.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/FluentValidation.AspNetCore.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/bin/Debug/netcoreapp3.1/FluentValidation.DependencyInjectionExtensions.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/c#/desafioLab2/DIO.Series/obj/Debug/netcoreapp3.1/DIO.Series.csproj.CopyComplete
