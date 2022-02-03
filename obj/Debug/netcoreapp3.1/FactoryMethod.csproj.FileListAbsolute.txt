@@ -1,0 +1,13 @@
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/bin/Debug/netcoreapp3.1/FactoryMethod
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/bin/Debug/netcoreapp3.1/FactoryMethod.deps.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/bin/Debug/netcoreapp3.1/FactoryMethod.runtimeconfig.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/bin/Debug/netcoreapp3.1/FactoryMethod.runtimeconfig.dev.json
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/bin/Debug/netcoreapp3.1/FactoryMethod.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/bin/Debug/netcoreapp3.1/FactoryMethod.pdb
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/obj/Debug/netcoreapp3.1/FactoryMethod.csprojAssemblyReference.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/obj/Debug/netcoreapp3.1/FactoryMethod.AssemblyInfoInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/obj/Debug/netcoreapp3.1/FactoryMethod.AssemblyInfo.cs
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/obj/Debug/netcoreapp3.1/FactoryMethod.csproj.CoreCompileInputs.cache
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/obj/Debug/netcoreapp3.1/FactoryMethod.dll
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/obj/Debug/netcoreapp3.1/FactoryMethod.pdb
+/media/vitor/3a3e3500-644b-48e7-80d4-1471c847cc91/home/vitor/Documents/learning/padrão/criacional/factory/FactoryMethod/obj/Debug/netcoreapp3.1/FactoryMethod.genruntimeconfig.cache
