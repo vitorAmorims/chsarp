@@ -13,6 +13,12 @@ namespace jogoRPG.src.Models
         public int Id { get; private set; }
         public int Lv { get; private set; }
         public int HP { get; private set; }
-        public int MP { get; private set; }                
+        public int MP { get; private set; }
+
+        public override string ToString()
+        {
+            return $"id:{Id}\t ({Lv}\t {HP}\t {MP}\t";
+        }
+
     }
 }
