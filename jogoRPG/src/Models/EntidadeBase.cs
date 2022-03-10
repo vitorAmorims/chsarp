@@ -1,19 +1,39 @@
+using System;
+
 namespace jogoRPG.src.Models
 {
     public abstract class EntidadeBase
     {
-        protected EntidadeBase(int id, int lv, int hP, int mP)
+        protected EntidadeBase(string name, int lv, int hP, int mP)
         {
-            Id = id;
-            Lv = lv;
-            HP = hP;
-            MP = mP;
+            Id = new Guid();
+            this.Name = name;
+            this.SetLv(lv);
+            this.SetHp(hP);
+            this.SetMp(mP);
         }
 
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
+
+        public string Name { get; private set; }
         public int Lv { get; private set; }
         public int HP { get; private set; }
         public int MP { get; private set; }
+
+        public Guid GetGuid()
+        {
+            return this.Id;
+        }
+
+        public string GetName()
+        {
+            return this.Name;
+        }
+
+        public void Setname(string name)
+        {
+            this.Name = name;
+        }
 
         public int GetLv()
         {
@@ -22,7 +42,7 @@ namespace jogoRPG.src.Models
 
         public void SetLv(int value)
         {
-            this.Lv -= value;
+            this.Lv = value;
         }
         public int GetHp()
         {
@@ -31,7 +51,7 @@ namespace jogoRPG.src.Models
 
         public void SetHp(int value)
         {
-            this.HP -= value;
+            this.HP = value;
         }
 
         public int GetMp()
@@ -41,13 +61,8 @@ namespace jogoRPG.src.Models
 
         public void SetMp(int value)
         {
-            this.MP -= value;
+            this.MP = value;
         }
-
-        public override string ToString()
-        {
-            return $"id:{Id}\t ({Lv}\t {HP}\t {MP}\t";
-        }
-
+        virtual public void Info() { }
     }
 }
