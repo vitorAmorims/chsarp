@@ -14,7 +14,7 @@ namespace jogoRPG.src.Models
             this.SetLv(lv);
             this.SetHp(hP);
             this.SetMp(mP);
-        }
+        }        
 
         public Genero Genre { get; private set; }
 

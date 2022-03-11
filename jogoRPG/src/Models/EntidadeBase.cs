@@ -6,7 +6,7 @@ namespace jogoRPG.src.Models
     {
         protected EntidadeBase(string name, int lv, int hP, int mP)
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             this.Name = name;
             this.SetLv(lv);
             this.SetHp(hP);
@@ -14,7 +14,6 @@ namespace jogoRPG.src.Models
         }
 
         public Guid Id { get; private set; }
-
         public string Name { get; private set; }
         public int Lv { get; private set; }
         public int HP { get; private set; }
@@ -24,6 +23,7 @@ namespace jogoRPG.src.Models
         {
             return this.Id;
         }
+
 
         public string GetName()
         {
