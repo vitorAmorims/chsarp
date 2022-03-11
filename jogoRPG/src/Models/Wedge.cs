@@ -50,7 +50,7 @@ namespace jogoRPG.src.Models
 
         override public void Info()
         {
-            Console.WriteLine($"Considerado classe A do Genero: {GetGenre()} Nome: {this.GetName()} " +
+            Console.WriteLine($"Considerado guerreiro de classe A do Genero: {GetGenre()} Nome: {this.GetName()} " +
             $"Lv: {this.GetLv()} HP: {this.GetHp()} MP: {this.GetMp()}");
         }
 

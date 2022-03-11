@@ -35,7 +35,7 @@ namespace jogoRPG
             repositorio.Inserir(magoTopapa);
 
             Console.WriteLine("");
-            Console.WriteLine("Os personalizados do game são:");
+            Console.WriteLine("Os jogadores disponiveis do game são:");
             repositorio.Listar();
         }
         private static void ValidarObjTopapa(Topapa magoTopapa)
