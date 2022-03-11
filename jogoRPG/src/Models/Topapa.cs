@@ -1,10 +1,11 @@
 using System;
 using jogoRPG.src.Enum;
 using FluentValidation;
+using jogoRPG.src.Interfaces;
 
 namespace jogoRPG.src.Models
 {
-    public class Topapa : EntidadeBase
+    public class Topapa : EntidadeBase, IBase, ICombate
     {
         public Topapa(string name, int lv, int hP, int mP) : base(name, lv, hP, mP)
         {
@@ -16,6 +17,31 @@ namespace jogoRPG.src.Models
         }
         public Genero Genre { get; private set; }
 
+        public void Andar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Atacar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Comer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Defender()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Falar()
+        {
+            throw new NotImplementedException();
+        }
+
         public Genero GetGenre()
         {
             return this.Genre;
@@ -26,6 +52,21 @@ namespace jogoRPG.src.Models
             Console.WriteLine("O magico das Trevas: " + this.GetName());
             Console.WriteLine($"Genero: {this.GetGenre()} " +
             $"Lv: {this.GetLv()} HP: {this.GetHp()} MP: {this.GetMp()}");
+        }
+
+        public void Pular()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VireDireita()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VireEsquerda()
+        {
+            throw new NotImplementedException();
         }
     }
     public class TopapaValidator : AbstractValidator<Topapa>

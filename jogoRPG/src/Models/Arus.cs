@@ -1,10 +1,11 @@
 using System;
 using FluentValidation;
 using jogoRPG.src.Enum;
+using jogoRPG.src.Interfaces;
 
 namespace jogoRPG.src.Models
 {
-    public class Arus : EntidadeBase
+    public class Arus : EntidadeBase, IBase, ICombate
     {
         public Arus(string name, int lv, int hP, int mP) : base(name, lv, hP, mP)
         {
@@ -17,6 +18,31 @@ namespace jogoRPG.src.Models
 
         public Genero Genre { get; private set; }
 
+        public void Andar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Atacar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Comer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Defender()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Falar()
+        {
+            throw new NotImplementedException();
+        }
+
         public Genero GetGenre()
         {
             return this.Genre;
@@ -28,6 +54,20 @@ namespace jogoRPG.src.Models
             $"Lv: {this.GetLv()} HP: {this.GetHp()} MP: {this.GetMp()}");
         }
 
+        public void Pular()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VireDireita()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VireEsquerda()
+        {
+            throw new NotImplementedException();
+        }
     }
     public class ArusValidator : AbstractValidator<Arus>
     {

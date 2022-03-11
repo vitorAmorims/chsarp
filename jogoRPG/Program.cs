@@ -6,23 +6,27 @@ namespace jogoRPG
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Arus guerreiroArus = new Arus("Arus", 42, 471, 72);
             guerreiroArus.Info();
             ValidarObjArus(guerreiroArus);
+            Console.WriteLine("");
 
             Wedge guerreiroWedge = new Wedge("Wedge", 42, 471, 89);
             guerreiroWedge.Info();
             ValidarObjWedge(guerreiroWedge);
+            Console.WriteLine("");
 
             Ienica magaIenica = new Ienica("Ienica", 42, 600, 481);
             magaIenica.Info();
             ValidarObjIenica(magaIenica);
+            Console.WriteLine("");
 
             Topapa magoTopapa = new Topapa("Topapa", 42, 120, 620);
             magoTopapa.Info();
             ValidarObjTopapa(magoTopapa);
+            Console.WriteLine("");
         }
         private static void ValidarObjTopapa(Topapa magoTopapa)
         {
