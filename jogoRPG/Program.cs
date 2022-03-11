@@ -14,6 +14,8 @@ namespace jogoRPG
             guerreiroArus.Info();
             ValidarObjArus(guerreiroArus);
             Console.WriteLine("");
+            /* a inserção no repositorio,
+            neste caso independe do objeto ser válido. */
             repositorio.Inserir(guerreiroArus);
 
             Wedge guerreiroWedge = new Wedge("Wedge", 42, 471, 89);
