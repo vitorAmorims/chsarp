@@ -11,18 +11,16 @@ namespace CatalogoJogos.Controllers.V1
     public class JogosController: ControllerBase
     {
         [HttpGet]
-        public ActionResult<List<object>> GetGame()
+        public async Task<ActionResult<List<object>>> GetGame()
         {
-            
-            return NoContent();
+            return Ok();
         }
-        // [HttpGet]
-        // public async Task<ActionResult<List<object>>> GetGame()
-        // {
-            
-        //     return Ok();
-        // }
-        
+
+        [HttpGet("{idGame:guid}")]
+        public async Task<ActionResult<object>> GetGameId(Guid idGame)
+        {
+            return Ok();
+        }
         
     }
 }
