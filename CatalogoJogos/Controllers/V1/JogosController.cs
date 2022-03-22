@@ -27,6 +27,12 @@ namespace CatalogoJogos.Controllers.V1
         {
             return Ok();
         }
+
+        [HttpPut("{idGame:guid}")]
+        public async ActionResult<object> UpdateGame(Guid idGame, object game)
+        {
+            return Ok();
+        }
         
     }
 }
