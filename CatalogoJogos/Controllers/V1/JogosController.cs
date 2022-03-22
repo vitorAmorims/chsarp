@@ -33,6 +33,12 @@ namespace CatalogoJogos.Controllers.V1
         {
             return Ok();
         }
+
+        [HttpPatch("{idGame:guid}/preco/{price: double}")]
+        public async ActionResult<object> UpdateGame(Guid idGame, double price)
+        {
+            return Ok();
+        }
         
     }
 }
