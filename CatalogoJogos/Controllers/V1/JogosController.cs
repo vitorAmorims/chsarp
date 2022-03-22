@@ -21,6 +21,12 @@ namespace CatalogoJogos.Controllers.V1
         {
             return Ok();
         }
+
+        [HttpPost]
+        public async Task<ActionResult<object>> InsertGame([FromBody])
+        {
+            return Ok();
+        }
         
     }
 }
