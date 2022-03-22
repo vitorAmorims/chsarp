@@ -8,7 +8,7 @@ namespace CatalogoJogos.Controllers.V1
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class JogosController: ControllerBase
+    public class JogosController : ControllerBase
     {
         [HttpGet]
         public async Task<ActionResult<List<object>>> GetGame()
@@ -39,6 +39,11 @@ namespace CatalogoJogos.Controllers.V1
         {
             return Ok();
         }
-        
+
+        [HttpDelete("{idGame:guid}")]
+        public async ActionResult<object> DeleteGame(Guid idGame)
+        {
+            return Ok();
+        }
     }
 }
