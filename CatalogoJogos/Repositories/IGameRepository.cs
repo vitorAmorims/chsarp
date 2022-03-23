@@ -7,7 +7,7 @@ using CatalogoJogos.ViewModel;
 
 namespace CatalogoJogos.Repositories
 {
-    public interface IGameRepository
+    public interface IGameRepository: IDisposable
     {
         Task<List<Game>> GetGames(int page, int amount);
         Task<GameViewModel> GetGame(Guid id);

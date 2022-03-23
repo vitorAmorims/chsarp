@@ -22,15 +22,9 @@ namespace CatalogoJogos.Services
             var game = await _jogoRepository.GetGame(id);
 
             if (game == null)
-                return null;
+                throw new GameNotFoundException();
 
-            return new GameViewModel()
-            {
-                Id = game.Id,
-                Name = game.Name,
-                Producer = game.Producer,
-                Price = game.Price
-            };
+            return game;
         }
 
         public async Task<GameViewModel> GetGameNameProducer(string name, string producer)
@@ -64,8 +58,8 @@ namespace CatalogoJogos.Services
         public async Task<GameViewModel> InsertGame(GameInputModel game)
         {
             var entityGame = await _jogoRepository.GetGameNameProducer(game.Name, game.Producer);
-            if(entityGame == null)
-                throw new GameNotFoundException();
+            if(entityGame != null)
+                throw new GameFoundException();
             
             var newGame = new Game(){
                 Id = Guid.NewGuid(),
@@ -131,7 +125,9 @@ namespace CatalogoJogos.Services
 
         }
 
-        // public void Dispose()
-        //     _jogoRepository?.Dispose();
+        public void Dispose()
+        {
+            _jogoRepository?.Dispose();
+        }
     }
 }
