@@ -21,21 +21,26 @@ namespace CatalogoJogos.Controllers.V1
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GameViewModel>>> GetGame([FromQuery,
+        public async Task<ActionResult<IEnumerable<GameViewModel>>> GetGame([
+            FromQuery,
             Range(1, int.MaxValue)] int page = 1,
             [FromQuery, Range(1, 50)] int amount = 5)
         {
-            var result = await _jogoService.GetGames(page, amount);
+            var games = await _jogoService.GetGames(page, amount);
 
-            if(result.Count() == 0) return NoContent();
+            if(games.Count() == 0) return NoContent();
 
-            return Ok(result);
+            return Ok(games);
         }
 
         [HttpGet("{idGame:guid}")]
         public async Task<ActionResult<GameViewModel>> GetGameId(Guid idGame)
         {
-            return Ok();
+            var game = await _jogoService.GetGame(idGame);
+            
+            if(game == null) return NoContent();
+
+            return Ok(game);
         }
 
         [HttpPost]
