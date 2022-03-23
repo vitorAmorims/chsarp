@@ -53,7 +53,7 @@ namespace CatalogoJogos.Controllers.V1
 
             }
             // catch (RegisteredGameException ex)
-            catch(Exception e)
+            catch(Exception)
             {
                 return UnprocessableEntity("Já existe um jogo com este nome para esta produtora.");
             }
@@ -70,7 +70,7 @@ namespace CatalogoJogos.Controllers.V1
                 return Ok();
             }
             // catch (RegisteredGameException ex)
-            catch(Exception ex)
+            catch(Exception)
             {
                 return NotFound("Não existe o jogo cadastrado");   
                 
@@ -86,7 +86,7 @@ namespace CatalogoJogos.Controllers.V1
                 return Ok();   
             }
             // catch (RegisteredGameException ex)
-            catch (System.Exception ex)
+            catch (System.Exception)
             {
                 return NotFound("Não existe o jogo cadastrado");   
             }
@@ -96,7 +96,16 @@ namespace CatalogoJogos.Controllers.V1
         [HttpDelete("{idGame:guid}")]
         public async Task<ActionResult> DeleteGame(Guid idGame)
         {
-            return Ok();
+            try
+            {
+                await _jogoService.Remove(idGame);
+                return Ok();   
+            }
+            // catch (RegisteredGameException ex)
+            catch (System.Exception)
+            {
+                return NotFound("Não existe o jogo cadastrado");   
+            }
         }
     }
 }
