@@ -12,7 +12,7 @@ namespace CatalogoJogos.Repositories
         Task<List<Game>> GetGames(int page, int amount);
         Task<GameViewModel> GetGame(Guid id);
         Task<Game> GetGameNameProducer(string name, string producer);
-        Task<GameViewModel> InsertGame(Game game);
+        Task InsertGame(Game game);
         Task UpdateGame(Game game);
         Task UpdatePriceGame(Guid id, double Price);
         Task Remove(Guid id);

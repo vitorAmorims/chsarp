@@ -7,6 +7,7 @@ using CatalogoJogos.ViewModel;
 using CatalogoJogos.InputModel;
 using CatalogoJogos.Services;
 using System.ComponentModel.DataAnnotations;
+using CatalogoJogos.Exceptions;
 
 namespace CatalogoJogos.Controllers.V1
 {
@@ -64,10 +65,9 @@ namespace CatalogoJogos.Controllers.V1
                 return Ok(result);
 
             }
-            // catch (RegisteredGameException ex)
-            catch(Exception)
+            catch (RegisteredGameException e)
             {
-                return UnprocessableEntity("Já existe um jogo com este nome para esta produtora.");
+                return UnprocessableEntity(e.Message);
             }
         }
 
@@ -81,10 +81,9 @@ namespace CatalogoJogos.Controllers.V1
                 await _jogoService.UpdateGame(idGame, game);
                 return Ok();
             }
-            // catch (RegisteredGameException ex)
-            catch(Exception)
+            catch (RegisteredNotGameException e)
             {
-                return NotFound("Não existe o jogo cadastrado");   
+                return NotFound(e.Message);   
                 
             }
         }
@@ -97,10 +96,9 @@ namespace CatalogoJogos.Controllers.V1
                 await _jogoService.UpdatePriceGame(idGame, price);
                 return Ok();   
             }
-            // catch (RegisteredGameException ex)
-            catch (System.Exception)
+            catch (RegisteredNotGameException e)
             {
-                return NotFound("Não existe o jogo cadastrado");   
+                return NotFound(e.Message);   
             }
             
         }
@@ -113,10 +111,9 @@ namespace CatalogoJogos.Controllers.V1
                 await _jogoService.Remove(idGame);
                 return Ok();   
             }
-            // catch (RegisteredGameException ex)
-            catch (System.Exception)
+            catch (RegisteredNotGameException e)
             {
-                return NotFound("Não existe o jogo cadastrado");   
+                return NotFound(e.Message);   
             }
         }
     }

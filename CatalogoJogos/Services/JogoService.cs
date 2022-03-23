@@ -123,7 +123,6 @@ namespace CatalogoJogos.Services
                 Price = entityGame.Price
             };
             await _jogoRepository.UpdateGame(newGame);
-
         }
 
         public void Dispose()
