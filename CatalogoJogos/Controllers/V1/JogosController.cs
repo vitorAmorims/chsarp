@@ -72,15 +72,25 @@ namespace CatalogoJogos.Controllers.V1
             // catch (RegisteredGameException ex)
             catch(Exception ex)
             {
-                return NotFound("Não existe o jogo caddastrado");   
+                return NotFound("Não existe o jogo cadastrado");   
                 
             }
         }
 
         [HttpPatch("{idGame:guid}/preco/{price: double}")]
-        public async Task<ActionResult> UpdateGame(Guid idGame, double price)
+        public async Task<ActionResult> UpdatePriceGame(Guid idGame, double price)
         {
-            return Ok();
+            try
+            {
+                await _jogoService.UpdatePriceGame(idGame, price);
+                return Ok();   
+            }
+            // catch (RegisteredGameException ex)
+            catch (System.Exception ex)
+            {
+                return NotFound("Não existe o jogo cadastrado");   
+            }
+            
         }
 
         [HttpDelete("{idGame:guid}")]
