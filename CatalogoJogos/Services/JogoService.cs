@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CatalogoJogos.Exceptions;
 using CatalogoJogos.InputModel;
 using CatalogoJogos.Model;
 using CatalogoJogos.Repositories;
@@ -22,7 +23,7 @@ namespace CatalogoJogos.Services
             var game = await _jogoRepository.GetGame(id);
 
             if (game == null)
-                throw new GameNotFoundException();
+                throw new RegisteredNotGameException();
 
             return game;
         }
@@ -31,7 +32,7 @@ namespace CatalogoJogos.Services
         {
             var game = await _jogoRepository.GetGameNameProducer(name, producer);
             if (game == null)
-                throw new GameNotFoundException();
+                throw new RegisteredNotGameException();
 
             return new GameViewModel()
             {
@@ -59,7 +60,7 @@ namespace CatalogoJogos.Services
         {
             var entityGame = await _jogoRepository.GetGameNameProducer(game.Name, game.Producer);
             if(entityGame != null)
-                throw new GameFoundException();
+                throw new RegisteredGameException();
             
             var newGame = new Game(){
                 Id = Guid.NewGuid(),
@@ -81,7 +82,7 @@ namespace CatalogoJogos.Services
             var game = _jogoRepository.GetGame(id);
 
             if (game == null)
-                throw new GameNotFoundException();
+                throw new RegisteredNotGameException();
 
             await _jogoRepository.Remove(id);
         }
@@ -90,7 +91,7 @@ namespace CatalogoJogos.Services
         {
             var entityGame = await _jogoRepository.GetGame(id);
             if (game == null)
-                throw new GameNotFoundException();
+                throw new RegisteredNotGameException();
             
             entityGame.Id = id;
             entityGame.Name = game.Name;
@@ -111,7 +112,7 @@ namespace CatalogoJogos.Services
         {
             var entityGame = await _jogoRepository.GetGame(id);
             if (entityGame == null)
-                throw new GameNotFoundException();
+                throw new RegisteredNotGameException();
             
             entityGame.Price = Price;
             
