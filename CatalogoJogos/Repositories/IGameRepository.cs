@@ -10,7 +10,7 @@ namespace CatalogoJogos.Repositories
     public interface IGameRepository: IDisposable
     {
         Task<List<Game>> GetGames(int page, int amount);
-        Task<GameViewModel> GetGame(Guid id);
+        Task<Game> GetGame(Guid id);
         Task<Game> GetGameNameProducer(string name, string producer);
         Task InsertGame(Game game);
         Task UpdateGame(Game game);

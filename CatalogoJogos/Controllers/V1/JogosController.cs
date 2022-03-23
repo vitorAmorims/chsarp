@@ -22,28 +22,15 @@ namespace CatalogoJogos.Controllers.V1
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GameViewModel>>> GetGame([
-            FromQuery,
-            Range(1, int.MaxValue)] int page = 1,
+        public async Task<ActionResult<IEnumerable<GameViewModel>>> GetGame(
+            [FromQuery, Range(1, int.MaxValue)] int page = 1,
             [FromQuery, Range(1, 50)] int amount = 5)
         {
-            var games = await _jogoService.GetGames(page, amount);
+            var games = await _jogoService.GetGames(Convert.ToInt32(page), Convert.ToInt32(amount));
 
-            if(games.Count() == 0) return NoContent();
+            if (games.Count() == 0) return NoContent();
 
             return Ok(games);
-        }
-
-        [HttpGet]
-        public async Task<ActionResult<GameViewModel>> GetGameNameProducer(
-            [FromRoute] string Name,
-            [FromRoute] string Producer)
-        {
-            var game = await _jogoService.GetGameNameProducer(Name, Producer);
-
-            if(game == null) return NoContent();
-
-            return Ok();
         }
 
         [HttpGet("{idGame:guid}")]
@@ -51,7 +38,7 @@ namespace CatalogoJogos.Controllers.V1
         {
             var game = await _jogoService.GetGame(idGame);
 
-            if(game == null) return NoContent();
+            if (game == null) return NoContent();
 
             return Ok(game);
         }
@@ -74,7 +61,7 @@ namespace CatalogoJogos.Controllers.V1
         [HttpPut("{idGame:guid}")]
         public async Task<ActionResult> UpdateGame(
             [FromRoute] Guid idGame,
-            [FromBody]GameInputModel game)
+            [FromBody] GameInputModel game)
         {
             try
             {
@@ -84,27 +71,28 @@ namespace CatalogoJogos.Controllers.V1
             catch (RegisteredNotGameException e)
             {
                 return NotFound(e.Message);   
-                
             }
         }
 
-        [HttpPatch("{idGame:guid}/preco/{price: double}")]
-        public async Task<ActionResult> UpdatePriceGame(Guid idGame, double price)
+        [HttpPatch("{idGame:guid}/price/{price:double}")]
+        public async Task<ActionResult> UpdatePriceGame(
+            [FromRoute] Guid idGame,
+            [FromRoute] double price)
         {
             try
             {
-                await _jogoService.UpdatePriceGame(idGame, price);
+                await _jogoService.UpdatePriceGame(idGame, Convert.ToDouble(price));
                 return Ok();   
             }
             catch (RegisteredNotGameException e)
             {
                 return NotFound(e.Message);   
             }
-            
+
         }
 
         [HttpDelete("{idGame:guid}")]
-        public async Task<ActionResult> DeleteGame(Guid idGame)
+        public async Task<ActionResult> DeleteGame([FromRoute] Guid idGame)
         {
             try
             {

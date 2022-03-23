@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CatalogoJogos.Repositories;
+using CatalogoJogos.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,9 @@ namespace CatalogoJogos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IJogoService, JogoService>();
+            services.AddScoped<IGameRepository, GameRepository>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
                 {
@@ -47,8 +52,8 @@ namespace CatalogoJogos
                             Url = new Uri("https://example.com/license"),
                         }
                     });
+                    c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
                 });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -24,8 +24,14 @@ namespace CatalogoJogos.Services
 
             if (game == null)
                 throw new RegisteredNotGameException();
-
-            return game;
+            
+            return new GameViewModel()
+            {
+                Id = game.Id,
+                Name = game.Name,
+                Producer = game.Producer,
+                Price = game.Price
+            };
         }
 
         public async Task<GameViewModel> GetGameNameProducer(string name, string producer)
