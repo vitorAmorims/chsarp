@@ -10,10 +10,10 @@ namespace CatalogoJogos.Repositories
     public interface IGameRepository
     {
         Task<List<Game>> GetGames(int page, int amount);
-        Task<Game> GetGame(Guid id);
+        Task<GameViewModel> GetGame(Guid id);
         Task<Game> GetGameNameProducer(string name, string producer);
-        Task<Game> InsertGame(GameInputModel game);
-        Task UpdateGame(GameInputModel game);
+        Task<GameViewModel> InsertGame(Game game);
+        Task UpdateGame(Game game);
         Task UpdatePriceGame(Guid id, double Price);
         Task Remove(Guid id);
     }

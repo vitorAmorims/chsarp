@@ -1,13 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CatalogoJogos.InputModel;
+using CatalogoJogos.Model;
 using CatalogoJogos.Repositories;
 using CatalogoJogos.ViewModel;
 
 namespace CatalogoJogos.Services
 {
-    public class JogoService: IJogoService
+    public class JogoService : IJogoService
     {
         private readonly IGameRepository _jogoRepository;
         public JogoService(IGameRepository jogoRepository)
@@ -15,39 +17,121 @@ namespace CatalogoJogos.Services
             _jogoRepository = jogoRepository;
         }
 
-        public Task<GameViewModel> GetGame(Guid id)
+        public async Task<GameViewModel> GetGame(Guid id)
         {
-            throw new NotImplementedException();
+            var game = await _jogoRepository.GetGame(id);
+
+            if (game == null)
+                return null;
+
+            return new GameViewModel()
+            {
+                Id = game.Id,
+                Name = game.Name,
+                Producer = game.Producer,
+                Price = game.Price
+            };
         }
 
-        public Task<GameViewModel> GetGameNameProducer(string name, string producer)
+        public async Task<GameViewModel> GetGameNameProducer(string name, string producer)
         {
-            throw new NotImplementedException();
+            var game = await _jogoRepository.GetGameNameProducer(name, producer);
+            if (game == null)
+                throw new GameNotFoundException();
+
+            return new GameViewModel()
+            {
+                Id = game.Id,
+                Name = game.Name,
+                Producer = game.Producer,
+                Price = game.Price
+            };
         }
 
-        public Task<List<GameViewModel>> GetGames(int page, int amount)
+        public async Task<List<GameViewModel>> GetGames(int page, int amount)
         {
-            throw new NotImplementedException();
+            var games = await _jogoRepository.GetGames(page, amount);
+
+            return games.Select(game => new GameViewModel
+            {
+                Id = game.Id,
+                Name = game.Name,
+                Producer = game.Producer,
+                Price = game.Price
+            }).ToList();
         }
 
-        public Task<GameViewModel> InsertGame(GameInputModel game)
+        public async Task<GameViewModel> InsertGame(GameInputModel game)
         {
-            throw new NotImplementedException();
+            var entityGame = await _jogoRepository.GetGameNameProducer(game.Name, game.Producer);
+            if(entityGame == null)
+                throw new GameNotFoundException();
+            
+            var newGame = new Game(){
+                Id = Guid.NewGuid(),
+                Name = game.Name,
+                Producer = game.Producer,
+                Price = game.Price
+            };
+            await _jogoRepository.InsertGame(newGame);
+            return new GameViewModel(){
+                Id = newGame.Id,
+                Name = newGame.Name,
+                Producer = newGame.Producer,
+                Price = newGame.Price
+            };
         }
 
-        public Task Remove(Guid id)
+        public async Task Remove(Guid id)
         {
-            throw new NotImplementedException();
+            var game = _jogoRepository.GetGame(id);
+
+            if (game == null)
+                throw new GameNotFoundException();
+
+            await _jogoRepository.Remove(id);
         }
 
-        public Task UpdateGame(Guid id, GameInputModel game)
+        public async Task UpdateGame(Guid id, GameInputModel game)
         {
-            throw new NotImplementedException();
+            var entityGame = await _jogoRepository.GetGame(id);
+            if (game == null)
+                throw new GameNotFoundException();
+            
+            entityGame.Id = id;
+            entityGame.Name = game.Name;
+            entityGame.Producer = game.Producer;
+            entityGame.Price = game.Price;
+
+            var newGame = new Game(){
+                Id = entityGame.Id,
+                Name = entityGame.Name,
+                Producer = entityGame.Producer,
+                Price = entityGame.Price
+            };
+
+            await _jogoRepository.UpdateGame(newGame);
         }
 
-        public Task UpdatePriceGame(Guid id, double Price)
+        public async Task UpdatePriceGame(Guid id, double Price)
         {
-            throw new NotImplementedException();
+            var entityGame = await _jogoRepository.GetGame(id);
+            if (entityGame == null)
+                throw new GameNotFoundException();
+            
+            entityGame.Price = Price;
+            
+            var newGame = new Game(){
+                Id = entityGame.Id,
+                Name = entityGame.Name,
+                Producer = entityGame.Producer,
+                Price = entityGame.Price
+            };
+            await _jogoRepository.UpdateGame(newGame);
+
         }
+
+        // public void Dispose()
+        //     _jogoRepository?.Dispose();
     }
 }
