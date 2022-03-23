@@ -33,6 +33,18 @@ namespace CatalogoJogos.Controllers.V1
             return Ok(games);
         }
 
+        [HttpGet]
+        public async Task<ActionResult<GameViewModel>> GetGameNameProducer(
+            [FromRoute] string Name,
+            [FromRoute] string Producer)
+        {
+            var game = await _jogoService.GetGameNameProducer(Name, Producer);
+
+            if(game == null) return NoContent();
+
+            return Ok();
+        }
+
         [HttpGet("{idGame:guid}")]
         public async Task<ActionResult<GameViewModel>> GetGameId(Guid idGame)
         {
