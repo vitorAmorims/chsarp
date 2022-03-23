@@ -12,7 +12,7 @@ namespace CatalogoJogos.Services
         Task<GameViewModel> GetGame(Guid id);
         Task<GameViewModel> InsertGame(GameInputModel game);
         Task UpdateGame(Guid id, GameInputModel game);
-        Task UpdateGame(Guid id, double Price);
+        Task UpdatePriceGame(Guid id, double Price);
         Task Remove(Guid id);
     }
 }

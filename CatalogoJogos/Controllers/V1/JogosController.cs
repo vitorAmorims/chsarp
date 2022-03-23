@@ -48,22 +48,33 @@ namespace CatalogoJogos.Controllers.V1
         {
             try
             {
-                var result = _jogoService.InsertGame(game);
+                var result = await _jogoService.InsertGame(game);
                 return Ok(result);
 
             }
             // catch (RegisteredGameException ex)
             catch(Exception e)
             {
-                 return UnprocessableEntity("Já existe um jogo com este nome para esta produtora.");
+                return UnprocessableEntity("Já existe um jogo com este nome para esta produtora.");
             }
-            
         }
 
         [HttpPut("{idGame:guid}")]
-        public async Task<ActionResult> UpdateGame(Guid idGame, GameInputModel game)
+        public async Task<ActionResult> UpdateGame(
+            [FromRoute] Guid idGame,
+            [FromBody]GameInputModel game)
         {
-            return Ok();
+            try
+            {
+                await _jogoService.UpdateGame(idGame, game);
+                return Ok();
+            }
+            // catch (RegisteredGameException ex)
+            catch(Exception ex)
+            {
+                return NotFound("Não existe o jogo caddastrado");   
+                
+            }
         }
 
         [HttpPatch("{idGame:guid}/preco/{price: double}")]
