@@ -37,16 +37,27 @@ namespace CatalogoJogos.Controllers.V1
         public async Task<ActionResult<GameViewModel>> GetGameId(Guid idGame)
         {
             var game = await _jogoService.GetGame(idGame);
-            
+
             if(game == null) return NoContent();
 
             return Ok(game);
         }
 
         [HttpPost]
-        public async Task<ActionResult<GameViewModel>> InsertGame(GameInputModel game)
+        public async Task<ActionResult<GameViewModel>> InsertGame([FromBody] GameInputModel game)
         {
-            return Ok();
+            try
+            {
+                var result = _jogoService.InsertGame(game);
+                return Ok(result);
+
+            }
+            // catch (RegisteredGameException ex)
+            catch(Exception e)
+            {
+                 return UnprocessableEntity("Já existe um jogo com este nome para esta produtora.");
+            }
+            
         }
 
         [HttpPut("{idGame:guid}")]
