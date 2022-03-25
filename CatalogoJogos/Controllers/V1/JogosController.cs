@@ -28,7 +28,7 @@ namespace CatalogoJogos.Controllers.V1
         {
             var games = await _jogoService.GetGames(Convert.ToInt32(page), Convert.ToInt32(amount));
 
-            if (games.Count() == 0) return NoContent();
+            if (games.Count() == 0 || games == null) return NoContent();
 
             return Ok(games);
         }
@@ -36,11 +36,19 @@ namespace CatalogoJogos.Controllers.V1
         [HttpGet("{idGame:guid}")]
         public async Task<ActionResult<GameViewModel>> GetGameId(Guid idGame)
         {
-            var game = await _jogoService.GetGame(idGame);
+            try
+            {
+                var game = await _jogoService.GetGame(idGame);
 
-            if (game == null) return NoContent();
+                if (game == null) return NoContent();
 
-            return Ok(game);
+                return Ok(game);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
         [HttpPost]
@@ -70,7 +78,7 @@ namespace CatalogoJogos.Controllers.V1
             }
             catch (RegisteredNotGameException e)
             {
-                return NotFound(e.Message);   
+                return NotFound(e.Message);
             }
         }
 
@@ -82,11 +90,11 @@ namespace CatalogoJogos.Controllers.V1
             try
             {
                 await _jogoService.UpdatePriceGame(idGame, Convert.ToDouble(price));
-                return Ok();   
+                return Ok();
             }
             catch (RegisteredNotGameException e)
             {
-                return NotFound(e.Message);   
+                return NotFound(e.Message);
             }
 
         }
@@ -97,11 +105,11 @@ namespace CatalogoJogos.Controllers.V1
             try
             {
                 await _jogoService.Remove(idGame);
-                return Ok();   
+                return Ok();
             }
             catch (RegisteredNotGameException e)
             {
-                return NotFound(e.Message);   
+                return NotFound(e.Message);
             }
         }
     }

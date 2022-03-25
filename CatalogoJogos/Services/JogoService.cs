@@ -52,6 +52,7 @@ namespace CatalogoJogos.Services
         public async Task<List<GameViewModel>> GetGames(int page, int amount)
         {
             var games = await _jogoRepository.GetGames(page, amount);
+            if(games.Count == 0) return null;
 
             return games.Select(game => new GameViewModel
             {
@@ -119,16 +120,15 @@ namespace CatalogoJogos.Services
             var entityGame = await _jogoRepository.GetGame(id);
             if (entityGame == null)
                 throw new RegisteredNotGameException();
-            
-            entityGame.Price = Price;
-            
-            var newGame = new Game(){
-                Id = entityGame.Id,
-                Name = entityGame.Name,
+
+            var game = new Game(){
+                Id = id,
+                Price = Price,
                 Producer = entityGame.Producer,
-                Price = entityGame.Price
+                Name = entityGame.Name
             };
-            await _jogoRepository.UpdateGame(newGame);
+            
+            await _jogoRepository.UpdateGame(game);
         }
 
         public void Dispose()

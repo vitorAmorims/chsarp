@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CatalogoJogos.Model;
 using CatalogoJogos.Repositories;
 using CatalogoJogos.Services;
 using Microsoft.AspNetCore.Builder;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MySql.Data.MySqlClient;
 
 namespace CatalogoJogos
 {
@@ -28,8 +30,9 @@ namespace CatalogoJogos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<AppDb>(_ => new AppDb(Configuration["ConnectionStrings:Default"]));
             services.AddScoped<IJogoService, JogoService>();
-            services.AddScoped<IGameRepository, GameRepository>();
+            services.AddScoped<IGameRepository, GameMySqlRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
