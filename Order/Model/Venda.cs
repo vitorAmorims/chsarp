@@ -47,5 +47,10 @@ namespace Order.Model
             }
             return total;
         }
+
+        public double getTotal()
+        {
+            return getSubTotal() + getTaxes();
+        }
     }
 }
