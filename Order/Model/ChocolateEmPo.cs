@@ -1,0 +1,17 @@
+using System;
+
+namespace Order.Model
+{
+    public class ChocolateEmPo: Item
+    {
+        public ChocolateEmPo(string Marca, int Preco):base("Chocolate em pó", Marca, Preco)
+        {
+            
+        }
+
+        public override double CalcularImposto()
+        {
+            return Convert.ToDouble(this.Preco) * 0.3;
+        }
+    }
+}
