@@ -9,9 +9,9 @@ namespace Order.Model
             
         }
 
-        public override double CalcularImposto()
+        public override double getTaxes()
         {
-            return Convert.ToDouble(this.Preco) * 0.5;
+            return 0.5;
         }
     }
 }

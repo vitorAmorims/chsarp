@@ -9,31 +9,10 @@ namespace Order.Model
             
         }
 
-        public override double CalcularImposto()
+        public override double getTaxes()
         {
-            return Convert.ToDouble(this.Preco) * 0.1;
+            return 0.1;
         }
     }
 }
 
-
-        // {
-        //     var total = 0.0;
-        //     if (Produto == "Leite A")
-        //     {
-        //         total += Convert.ToDouble(Preco) * 0.1;
-        //     }
-        //     if (Produto == "Cartela de ovos")
-        //     {
-        //         total += Convert.ToDouble(Preco) * 0.2;
-        //     }
-        //     if (Produto == "Chocolate em pó")
-        //     {
-        //         total += Convert.ToDouble(Preco) * 0.3;
-        //     }
-        //     if (Produto == "Detergente liquido")
-        //     {
-        //         total += Convert.ToDouble(Preco) * 0.5;
-        //     }
-        //     return total;
-        // }
