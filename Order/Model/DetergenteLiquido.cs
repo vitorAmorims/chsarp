@@ -2,7 +2,7 @@ using System;
 
 namespace Order.Model
 {
-    public class DetergenteLiquido:Item
+    public class DetergenteLiquido:ItemComImposto
     {
         public DetergenteLiquido(string Marca, int Preco):base("Detergente liquido", Marca, Preco)
         {

@@ -15,10 +15,5 @@ namespace Order.Model
         public string Marca { get; set; }
         public int Preco { get; set; }
 
-        public double CalcularImposto()
-        {
-            return this.Preco * this.getTaxes();
-        }
-        public abstract double getTaxes();
     }
 }

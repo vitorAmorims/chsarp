@@ -13,7 +13,7 @@ namespace Order.Model
 
         public Guid Id { get; }
 
-        public List<Item> lista = new List<Item>();
+        public List<ItemComImposto> lista = new List<ItemComImposto>();
 
         public int getSubTotal()
         {
@@ -26,9 +26,9 @@ namespace Order.Model
         public double getTaxes()
         {
             var total = 0.0;
-            foreach (var item in lista)
+            foreach (var i in lista)
             {
-                total += item.CalcularImposto();
+                total += i.CalcularImposto();
             }
             return total;
         }

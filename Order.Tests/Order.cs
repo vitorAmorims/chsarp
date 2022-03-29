@@ -15,10 +15,11 @@ namespace Order.Tests
             vendas.lista.Add(new CartelaDeOvos("Granjão", 10));
             vendas.lista.Add(new ChocolateEmPo("Todynho", 15));
             vendas.lista.Add(new DetergenteLiquido("Minuamo", 5));
+            vendas.lista.Add(new Agua("Cristal", 2));
             
             //Action
             var total = vendas.getSubTotal();
-            var soma = 35;
+            var soma = 37;
         
             //Assert
             Assert.Equal(total, soma);
@@ -33,6 +34,8 @@ namespace Order.Tests
             vendas.lista.Add(new CartelaDeOvos("Granjão", 10)); //0.2 -> 2
             vendas.lista.Add(new ChocolateEmPo("Todynho", 15)); //0.3 -> 4.5
             vendas.lista.Add(new DetergenteLiquido("Minuamo", 5)); //0.5 -> 2.5
+            vendas.lista.Add(new Agua("Cristal", 2));
+            
             
             //Action
             var total = vendas.getTaxes();
@@ -51,10 +54,11 @@ namespace Order.Tests
             vendas.lista.Add(new CartelaDeOvos("Granjão", 10)); //0.2 -> 2
             vendas.lista.Add(new ChocolateEmPo("Todynho", 15)); //0.3 -> 4.5
             vendas.lista.Add(new DetergenteLiquido("Minuamo", 5)); //0.5 -> 2.5
+            vendas.lista.Add(new Agua("Cristal", 2));
             
             //Action
             var total = vendas.getTotal();
-            var soma = 44.50;
+            var soma = 46.50;
         
             //Assert
             Assert.Equal(total, soma);

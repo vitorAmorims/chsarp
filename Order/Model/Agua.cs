@@ -2,17 +2,16 @@ using System;
 
 namespace Order.Model
 {
-    public class LeiteA: ItemComImposto
+    public class Agua:ItemComImposto
     {
-        public LeiteA(string Marca, int Preco):base("Leite A", Marca, Preco)
+        public Agua(string Marca, int Preco):base("Agua", Marca, Preco)
         {
             
         }
 
         public override double getTaxes()
         {
-            return 0.1;
+            return 0.0;
         }
     }
 }
-

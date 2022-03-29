@@ -2,7 +2,7 @@ using System;
 
 namespace Order.Model
 {
-    public class CartelaDeOvos: Item
+    public class CartelaDeOvos: ItemComImposto
     {
         public CartelaDeOvos(string Marca, int Preco):base("Cartela de ovos", Marca, Preco)
         {
