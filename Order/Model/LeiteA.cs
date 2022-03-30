@@ -9,7 +9,7 @@ namespace Order.Model
             
         }
 
-        public override double getTaxes()
+        public override double getTaxes(System.DateTime dateTime)
         {
             return 0.1;
         }

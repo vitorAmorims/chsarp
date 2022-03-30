@@ -2,15 +2,21 @@ using System;
 
 namespace Order.Model
 {
-    public class DetergenteLiquido:ItemComImposto
+    public class DetergenteLiquido : ItemComImposto
     {
-        public DetergenteLiquido(string Marca, int Preco):base("Detergente liquido", Marca, Preco)
+        public DetergenteLiquido(string Marca, int Preco) : base("Detergente liquido", Marca, Preco)
         {
-            
+
         }
 
-        public override double getTaxes()
+        public override double getTaxes(System.DateTime dateTime)
         {
+            // var data = new DateTime();
+            var marco = 3;
+            if (dateTime.Month == marco)
+            {
+                return 0.0;
+            }
             return 0.5;
         }
     }

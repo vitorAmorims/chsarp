@@ -23,19 +23,19 @@ namespace Order.Model
             });
         }
 
-        public double getTaxes()
+        public double getTaxes(DateTime dateTime)
         {
             var total = 0.0;
             foreach (var i in lista)
             {
-                total += i.CalcularImposto();
+                total += i.CalcularImposto(dateTime);
             }
             return total;
         }
 
-        public double getTotal()
+        public double getTotal(DateTime dateTime)
         {
-            return getSubTotal() + getTaxes();
+            return getSubTotal() + getTaxes(dateTime);
         }
     }
 }
