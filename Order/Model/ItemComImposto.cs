@@ -1,3 +1,5 @@
+using FluentValidation;
+
 namespace Order.Model
 {
     public abstract class ItemComImposto : Item
