@@ -2,14 +2,14 @@ using System;
 
 namespace Order.Model
 {
-    public class ChocolateEmPo: ItemComImposto
+    public class ChocolateEmPo : ItemComImposto
     {
-        public ChocolateEmPo(string Marca, int Preco):base("Chocolate em pó", Marca, Preco)
+        public ChocolateEmPo(string Marca, int Preco) : base("Chocolate em pó", Marca, Preco)
         {
-            
+
         }
 
-        public override double getTaxes(System.DateTime dateTime)
+        public override double getImposto(System.DateTime dateTime)
         {
             return 0.3;
         }

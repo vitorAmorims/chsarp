@@ -23,7 +23,7 @@ namespace Order.Model
             });
         }
 
-        public double getTaxes(DateTime dateTime)
+        public double getImposto(DateTime dateTime)
         {
             var total = 0.0;
             foreach (var i in lista)
@@ -35,7 +35,7 @@ namespace Order.Model
 
         public double getTotal(DateTime dateTime)
         {
-            return getSubTotal() + getTaxes(dateTime);
+            return getSubTotal() + getImposto(dateTime);
         }
     }
 }

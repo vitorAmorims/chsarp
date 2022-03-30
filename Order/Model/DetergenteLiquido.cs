@@ -9,7 +9,7 @@ namespace Order.Model
 
         }
 
-        public override double getTaxes(System.DateTime dateTime)
+        public override double getImposto(System.DateTime dateTime)
         {
             // var data = new DateTime();
             var marco = 3;

@@ -9,8 +9,8 @@ namespace Order.Model
 
         public double CalcularImposto(System.DateTime dateTime)
         {
-            return this.Preco * this.getTaxes(dateTime);
+            return this.Preco * this.getImposto(dateTime);
         }
-        public abstract double getTaxes(System.DateTime dateTime);
+        public abstract double getImposto(System.DateTime dateTime);
     }
 }
