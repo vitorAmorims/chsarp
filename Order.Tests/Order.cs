@@ -53,6 +53,20 @@ namespace Order.Tests
             vendas.lista.Add(new DetergenteLiquido("Minuamo", 5)); //0.5 -> 2.5
             vendas.lista.Add(new Agua("Cristal", 2));
 
+            ItemValidator validator = new ItemValidator();
+            foreach (var item in vendas.lista)
+            {
+                ValidationResult results = validator.Validate(item);
+                if (!results.IsValid)
+                {
+                    foreach (var failure in results.Errors)
+                    {
+                        Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    }
+                }
+                Assert.False(results.IsValid);
+            }
+
 
             //Action
             var total = vendas.getImposto(new DateTime(2022, 01, 30));
@@ -73,6 +87,20 @@ namespace Order.Tests
             vendas.lista.Add(new DetergenteLiquido("Minuamo", 5));
             vendas.lista.Add(new Agua("Cristal", 2));
 
+            ItemValidator validator = new ItemValidator();
+            foreach (var item in vendas.lista)
+            {
+                ValidationResult results = validator.Validate(item);
+                if (!results.IsValid)
+                {
+                    foreach (var failure in results.Errors)
+                    {
+                        Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    }
+                }
+                Assert.False(results.IsValid);
+            }
+
 
             //Action
             var total = vendas.getImposto(new DateTime(2022, 03, 30));
@@ -92,6 +120,20 @@ namespace Order.Tests
             vendas.lista.Add(new ChocolateEmPo("Todynho", 15)); //0.3 -> 4.5
             vendas.lista.Add(new DetergenteLiquido("Minuamo", 5)); //0.5 -> 2.5
             vendas.lista.Add(new Agua("Cristal", 2));
+
+            ItemValidator validator = new ItemValidator();
+            foreach (var item in vendas.lista)
+            {
+                ValidationResult results = validator.Validate(item);
+                if (!results.IsValid)
+                {
+                    foreach (var failure in results.Errors)
+                    {
+                        Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                    }
+                }
+                Assert.False(results.IsValid);
+            }
 
             //Action
             var total = vendas.getTotal(new DateTime(2022, 01, 30));
