@@ -1,0 +1,13 @@
+classes/métodos gigantes
+aninhamento de ifs
+códigos dificeis de ler
+
+
+motivo
+app orçamento
+
+regras de negocio
+calcular os impostos
+    iss
+    icms
+    ...
