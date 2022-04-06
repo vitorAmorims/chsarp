@@ -6,7 +6,7 @@ namespace Strategy.src.Model
     {
         public double Calcula(Orcamento orcamento)
         {
-            if(orcamento.Valor >= 3000)
+            if (orcamento.Valor >= 3000)
             {
                 return (orcamento.Valor * 0.08) + 30;
             }
