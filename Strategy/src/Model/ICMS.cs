@@ -6,12 +6,7 @@ namespace Strategy.src.Model
     {
         public double Calcula(Orcamento orcamento)
         {
-            return orcamento.Valor * 0.1;
+            return (orcamento.Valor * 0.05) + 50;
         }
-
-        // public double CalculaICMS(Orcamento orcamento)
-        // {
-        //     return orcamento.Valor * 0.1;
-        // }
     }
 }

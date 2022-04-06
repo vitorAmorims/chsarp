@@ -22,9 +22,16 @@ namespace Strategy
             //terceira versão - Strategy
             Imposto icms = new ICMS();
             Imposto iss = new ISS();
+            Imposto icccMeioPorcento = new ICCCMeioPorcento();
+            Imposto icccSetePorcento = new ICCCSetePorcento();
+            Imposto icccOitoPorcentoMaisTrintaReais = new ICCCOitoPorcentoMaisTrintaReais();
             CalculaImposto_v3 calc = new CalculaImposto_v3() ;
             calc.RealizarCalculo(o, icms);
             calc.RealizarCalculo(o, iss);
+            calc.RealizarCalculo(o, icccMeioPorcento);
+            calc.RealizarCalculo(o, icccSetePorcento);
+            calc.RealizarCalculo(o, icccOitoPorcentoMaisTrintaReais);
+
         }
     }
 }
