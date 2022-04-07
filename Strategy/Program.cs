@@ -8,47 +8,7 @@ namespace Strategy
     {
         static void Main()
         {
-            System.Console.WriteLine("----------Abaixo de 500----------------");
-            //arrange
-            CalculadorDeDescontos calculaDescontoAbaixoDeQuinhentosReais
-                = new CalculadorDeDescontos();
-            Orcamento orcamento = new Orcamento(500);
-            orcamento.AdicionaItem(new Item("caneta", 250));
-            orcamento.AdicionaItem(new Item("lápis", 250));
-
-            //action
-            double desconto = calculaDescontoAbaixoDeQuinhentosReais.Calcula(orcamento);
-            System.Console.WriteLine(desconto);
-
-            System.Console.WriteLine("-------------------Maior que 500 desconto 7%----------------------");
-            //arrange
-            CalculadorDeDescontos calculaDescontoMaiorQuinhentosReais
-                = new CalculadorDeDescontos();
-            Orcamento orcamento3 = new Orcamento(1500);
-            orcamento3.AdicionaItem(new Item("caneta", 1250));
-            orcamento3.AdicionaItem(new Item("lápis", 250));
-
-            //action
-            double desconto3 = calculaDescontoMaiorQuinhentosReais.Calcula(orcamento3);
-            System.Console.WriteLine(desconto3);
-
-            System.Console.WriteLine("--------------Mais de cinco itens  10%-----------------");
-            //arrange
-            CalculadorDeDescontos calcularDescontoMaisDeCincoItens =
-            new CalculadorDeDescontos();
-            Orcamento orcamento2 = new Orcamento(1000);
-            orcamento2.AdicionaItem(new Item("caneta", 250));
-            orcamento2.AdicionaItem(new Item("lápis", 250));
-            orcamento2.AdicionaItem(new Item("Microondas", 250));
-            orcamento2.AdicionaItem(new Item("Carregador de Celular", 100));
-            orcamento2.AdicionaItem(new Item("Fone de ouvido", 100));
-            orcamento2.AdicionaItem(new Item("Pilhas", 50));
-
-            //action
-            double desconto2 = calcularDescontoMaisDeCincoItens.Calcula(orcamento2);
-            System.Console.WriteLine(desconto2);
-
-
+            DescontoComChainOfResponsability();
         }
         public static void IniciandoStrategy()
         {
@@ -67,7 +27,7 @@ namespace Strategy
             calcularISS_v2.RealizarCalculoISS(o);
         }
 
-        public static void StrategyImplementado()
+        public static void CalcularImpostoComStrategy()
         {
             Orcamento o = new Orcamento(10);
             //terceira versão - Strategy
@@ -83,7 +43,61 @@ namespace Strategy
             calc.RealizarCalculo(o, icccSetePorcento);
             calc.RealizarCalculo(o, icccOitoPorcentoMaisTrintaReais);
         }
+        public static void DescontoComChainOfResponsability()
+        {
+            System.Console.WriteLine("----------Abaixo de 500----------------");
+            //arrange
+            CalculadorDeDescontos calculaDescontoAbaixoDeQuinhentosReais
+                = new CalculadorDeDescontos();
+            Orcamento orcamento = new Orcamento(499);
+            orcamento.AdicionaItem(new Item("caneta", 250));
+            orcamento.AdicionaItem(new Item("lapis", 249));
 
+            //action
+            double desconto = calculaDescontoAbaixoDeQuinhentosReais.Calcula(orcamento);
+            System.Console.WriteLine(desconto);
+
+            System.Console.WriteLine("-------------------Maior que 500 desconto 7%----------------------");
+            //arrange
+            CalculadorDeDescontos calculaDescontoMaiorQuinhentosReais
+                = new CalculadorDeDescontos();
+            Orcamento orcamento3 = new Orcamento(1500);
+            orcamento3.AdicionaItem(new Item("caneta", 1250));
+            orcamento3.AdicionaItem(new Item("borracha", 250));
+
+            //action
+            double desconto3 = calculaDescontoMaiorQuinhentosReais.Calcula(orcamento3);
+            System.Console.WriteLine(desconto3);
+
+            System.Console.WriteLine("--------------Mais de cinco itens  10%-----------------");
+            //arrange
+            CalculadorDeDescontos calcularDescontoMaisDeCincoItens =
+            new CalculadorDeDescontos();
+            Orcamento orcamento2 = new Orcamento(1000);
+            orcamento2.AdicionaItem(new Item("caneta", 250));
+            orcamento2.AdicionaItem(new Item("lapis", 250));
+            orcamento2.AdicionaItem(new Item("Microondas", 250));
+            orcamento2.AdicionaItem(new Item("Carregador de Celular", 100));
+            orcamento2.AdicionaItem(new Item("Fone de ouvido", 100));
+            orcamento2.AdicionaItem(new Item("Pilhas", 50));
+
+            //action
+            double desconto2 = calcularDescontoMaisDeCincoItens.Calcula(orcamento2);
+            System.Console.WriteLine(desconto2);
+
+
+            System.Console.WriteLine("------------Desconto 5% caso a lista tenha lapis e caneta-----------------");
+            //arrange
+            CalculadorDeDescontos calculaDescontoCasoAListaTenhaLapisECaneta =
+            new CalculadorDeDescontos();
+            Orcamento orcamento4 = new Orcamento(200);
+            orcamento4.AdicionaItem(new Item("caneta", 100));
+            orcamento4.AdicionaItem(new Item("lapis", 100));
+            
+            //action
+            double desconto4 = calculaDescontoCasoAListaTenhaLapisECaneta.Calcula(orcamento4);
+            System.Console.WriteLine(desconto4);
+        }
 
     }
 }
