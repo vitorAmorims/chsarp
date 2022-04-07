@@ -8,12 +8,10 @@ namespace ExampleExtensions.src.Model
             Aprovador csv = new CSV();
             Aprovador porcentagem = new Porcentagem();
             Aprovador json = new JSON();
-            Aprovador extensaoInvalida = new ExtensaoIndefinida();
 
             xml.SetSuccessor(csv);
             csv.SetSuccessor(porcentagem);
             porcentagem.SetSuccessor(json);
-            json.SetSuccessor(extensaoInvalida);
 
             xml.ProcessRequest(conta, formato);
         }

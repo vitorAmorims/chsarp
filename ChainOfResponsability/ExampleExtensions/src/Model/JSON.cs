@@ -1,3 +1,6 @@
+using System;
+using System.Text.Json;
+
 namespace ExampleExtensions.src.Model
 {
     public class JSON : Aprovador
@@ -6,10 +9,13 @@ namespace ExampleExtensions.src.Model
         {
             if (Formato.JSON.Equals(formato))
             {
+                var result = JsonSerializer.Serialize(conta);
                 System.Console.WriteLine("retorne a requisição em formato JSON");
-                return;
+                System.Console.WriteLine(result);
+                System.Console.WriteLine();
+                Console.WriteLine("--------------------------------------------");
             }
-            Successor.ProcessRequest(conta, formato);
+            
         }
     }
 }

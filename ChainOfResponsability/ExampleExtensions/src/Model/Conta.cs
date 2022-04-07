@@ -13,6 +13,11 @@ namespace ExampleExtensions.src.Model
             this.Saldo = saldo;
         }
 
+        public Conta()
+        {
+            
+        }
+
         public void Saque(double saque)
         {
             if (this.Saldo < saque)
