@@ -8,6 +8,10 @@ namespace Real_Word
         static void Main()
         {
     
+            ExampleChainOfResponsability();
+        }
+        public static void ExampleChainOfResponsability()
+        {
             Chain chain = new Chain();
             
             Purchase p = new Purchase(2034, 350.00, "Supplies");
@@ -21,7 +25,6 @@ namespace Real_Word
 
             // Wait for user
             Console.ReadKey();
-
         }
     }
 }
