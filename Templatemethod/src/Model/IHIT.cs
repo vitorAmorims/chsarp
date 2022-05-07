@@ -22,7 +22,6 @@ namespace Templatemethod.src.Model
         {
             if(orcamento.Itens.Count == 2 && CompararNome(orcamento))
             {
-                CompararNome(orcamento);
                 return true;
             }
             return false;
